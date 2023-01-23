@@ -1,5 +1,5 @@
 import random
-import time
+import timeit
 
 def fib(iters):
     i0 = 0
@@ -12,9 +12,9 @@ def fib(iters):
     
     return i_n
 
-start = time.time() * 10 ** 6
+# Could not use the time module because the elapsed time kept resulting in 0.0
 num = random.randint(15, 35)
-end = time.time() * 10 ** 6
+result = timeit.timeit(stmt='fib(' + str(num) + ')', globals=globals(), number=1)
 
 print('fib(' + str(num) + ')=' + str(fib(num)))
-print('fib(' + str(num) + ') took ' + str(end - start) + ' seconds')
+print('fib(' + str(num) + ') took ' + str(result) + ' seconds')
