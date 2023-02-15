@@ -1,0 +1,24 @@
+{% extends '_layout.html' %}
+
+{% block main %}
+      <div class="container-fluid">
+        <h1 class="mt-4">Registered Students</h1>
+        <p>The following students have registered for student organizations.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Organization</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for name, org in students.items() %}
+              <tr>
+                <td>{{ name }}</td>
+                <td>{{ org }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+{% endblock %}

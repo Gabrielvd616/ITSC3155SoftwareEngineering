@@ -1,0 +1,38 @@
+{% extends '_layout.html' %}
+
+{% block main %}
+      <div class="container-fluid">
+        <h1 class="mt-4">Register</h1>
+        <h5 class="text-danger">Error: Invalid input</h5>
+        <form action="/registrants" method="post">
+          <p>Use the following form to register for a student organization.</p>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="org">Organization:</label>
+            <select name="org" id="org" class="form-control" required>
+              <option value="" disabled selected hidden>
+                Enter your organization
+              </option>
+              <option value="49th Security Division">49th Security Division</option>
+              <option value="App Ventures">App Ventures</option>
+              <option value="Charlotte Hack">Charlotte Hack</option>
+              <option value="Game Dev">Game Dev</option>
+              <option value="Girls Who Code">Girls Who Code</option>
+            </select>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+{% endblock %}
